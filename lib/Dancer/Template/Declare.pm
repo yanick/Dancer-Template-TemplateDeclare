@@ -36,11 +36,15 @@ sub render {
     return Template::Declare->show( $template => $tokens );
 }
 
+sub layout {
+    my ($self, $layout, $tokens, $content) = @_;
+
+    return $content;
+}
+
 1;
 
 __END__
-
-=pod
 
 =head1 SYNOPSIS
 
@@ -84,6 +88,10 @@ the configuration file, like so:
 
 All the dispatch classes are automatically 
 loaded behind the scene.
+
+=head1 BUGS AND LIMITATIONS
+
+L<Dancer::Template::Declare> doesn't work with layouts yet.
 
 =head1 SEE ALSO
 
