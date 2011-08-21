@@ -8,12 +8,13 @@ META.yml
 README
 README.mkdn
 SIGNATURE
-lib/Dancer/Template/Mason.pm
+lib/Dancer/Template/Declare.pm
 t/00-load.t
 t/01-basic.t
 t/apps/Foo/Makefile.PL
 t/apps/Foo/bin/app.pl
 t/apps/Foo/lib/Foo.pm
+t/apps/Foo/lib/TD.pm
 t/apps/Foo/logs/development.log
 t/apps/Foo/public/404.html
 t/apps/Foo/public/500.html
@@ -26,5 +27,4 @@ t/apps/Foo/public/images/perldancer-bg.jpg
 t/apps/Foo/public/images/perldancer.jpg
 t/apps/Foo/public/javascripts/jquery.js
 t/apps/Foo/views/index.m
-t/interp_config.t
-t/views/index
+t/basic_app.t
