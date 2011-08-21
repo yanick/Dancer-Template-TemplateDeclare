@@ -1,6 +1,8 @@
 package Foo;
 use Dancer ':syntax';
 
+use Dancer::Template::Declare;
+
 use FindBin;
 
 our $VERSION = '0.1';
@@ -10,16 +12,15 @@ set appname => 'Foo';
 set views => $FindBin::Bin.'/apps/Foo/views';
 
 set engines => {
-    mason => { 
-        default_escape_flags => [ 'h' ],
-        extension => 'm',
+    declare => { 
+        dispatch_to => [ 'TD' ],
     },
 };
 
-set template => 'mason';
+set template => 'declare';
 
 get '/' => sub {
-    template 'index';
+    template 'simple';
 };
 
 true;
