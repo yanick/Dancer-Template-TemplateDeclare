@@ -1,26 +1,33 @@
 use strict;
 use warnings;
-use FindBin qw($Bin);
-use Test::More tests => 2;
 
-use Dancer::FileUtils 'path';
-use Dancer::Template::Mason;
+use lib 't/apps/Foo/lib';
+
+use FindBin qw($Bin);
+use Test::More tests => 3;
+
+use Dancer::Template::TemplateDeclare;
 
 my $engine;
-eval { $engine = Dancer::Template::Mason->new };
-is $@, '', "Dancer::Template::Mason engine created";
+eval { $engine = Dancer::Template::TemplateDeclare->new( 
+    dispatch_to => [ 'TD' ],
+) };
+is $@, '', "Dancer::Template::TemplateDeclare engine created";
 
-my $template = path($Bin, 'views', 'index');
-my $result = $engine->render(
-    $template,
-    {   var1 => 1,
-        var2 => 2,
-        foo  => 'one',
-        bar  => 'two',
-        baz  => 'three'
-    }
+$engine->init(
+    dispatch_to => [ 'TD' ],
 );
 
-my $expected =
-  'this is var1="1" and var2=2' . "\n\nanother line\n\none two three\n";
-is $result, $expected, "processed a template given as a file name";
+my $result = $engine->render(
+    'simple',
+);
+
+is $result, "\n<h1>hi there</h1>", 'simple';
+
+$result = $engine->render(
+    'with_vars' => {
+        name => 'Bob',
+    },
+);
+
+is $result, "\n<h1>hi Bob</h1>", "with vars";
