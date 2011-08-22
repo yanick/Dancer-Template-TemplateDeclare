@@ -15,4 +15,10 @@ template with_vars => sub {
     h1 { 'hi '.  $args->{name} };
 };
 
+template '/layout/foo' => sub {
+    my ( $self, $args ) = @_;
+
+    html { outs_raw $args->{content} } 
+};
+
 

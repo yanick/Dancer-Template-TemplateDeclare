@@ -8,7 +8,7 @@ META.yml
 README
 README.mkdn
 SIGNATURE
-lib/Dancer/Template/Declare.pm
+lib/Dancer/Template/TemplateDeclare.pm
 t/00-load.t
 t/01-basic.t
 t/apps/Foo/Makefile.PL

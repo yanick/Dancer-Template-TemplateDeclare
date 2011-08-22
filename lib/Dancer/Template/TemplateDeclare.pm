@@ -39,7 +39,11 @@ sub render {
 sub layout {
     my ($self, $layout, $tokens, $content) = @_;
 
-    return $content;
+    return Template::Declare->show( 
+        join( '/', 'layout', $layout ) => {
+            %$tokens, content => $content
+        }
+    );
 }
 
 1;
@@ -89,9 +93,24 @@ the configuration file, like so:
 All the dispatch classes are automatically 
 loaded behind the scene.
 
-=head1 BUGS AND LIMITATIONS
+=head1 USING LAYOUTS
 
-L<Dancer::Template::TemplateDeclare> doesn't work with layouts yet.
+If the layout is set to I<$name>,
+the template C</layout/$name> will be used and
+passed via the C<content> argument.
+
+For example, a simple C<main> layout would be:
+
+    template '/layout/main' => sub {
+        my ( $self, $args ) = @_;
+
+        html {
+            body { 
+                outs_raw $args->{content} 
+            } 
+        } 
+    };
+
 
 =head1 SEE ALSO
 

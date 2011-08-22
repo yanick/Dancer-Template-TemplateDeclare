@@ -1,4 +1,4 @@
 dist.ini
 foo
-^Dancer-Template-Declare-.*
+^Dancer-Template-TemplateDeclare-.*
 MANIFEST\.SKIP
