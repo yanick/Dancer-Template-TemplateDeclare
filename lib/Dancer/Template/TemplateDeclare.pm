@@ -1,4 +1,4 @@
-package Dancer::Template::Declare;
+package Dancer::Template::TemplateDeclare;
 # ABSTRACT: Template::Declare wrapper for Dancer
 
 use strict;
@@ -49,10 +49,10 @@ __END__
 =head1 SYNOPSIS
 
   # in 'config.yml'
-  template: 'declare'
+  template: 'TemplateDeclare'
 
   engines:
-    declare:
+    TemplateDeclare:
         dispatch_to:
             - A::Template::Class
             - Another::Template::Class
@@ -70,10 +70,10 @@ __END__
 This class is an interface between Dancer's template engine abstraction layer
 and the L<Template::Declare> templating system. 
 
-In order to use this engine, set the template to 'declare' in the configuration
+In order to use this engine, set the template to 'TemplateDeclare' in the configuration
 file:
 
-    template: declare
+    template: TemplateDeclare
 
 =head1 Template::Declare  CONFIGURATION
 
@@ -81,7 +81,7 @@ Parameters can also be passed to the L<Template::Declare> interpreter via
 the configuration file, like so:
 
     engines:
-        declare:
+        TemplateDeclare:
             dispatch_to:
                 - Some::Template
                 - Some::Other::Template
@@ -91,7 +91,7 @@ loaded behind the scene.
 
 =head1 BUGS AND LIMITATIONS
 
-L<Dancer::Template::Declare> doesn't work with layouts yet.
+L<Dancer::Template::TemplateDeclare> doesn't work with layouts yet.
 
 =head1 SEE ALSO
 

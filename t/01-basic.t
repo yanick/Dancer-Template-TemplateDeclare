@@ -6,13 +6,13 @@ use lib 't/apps/Foo/lib';
 use FindBin qw($Bin);
 use Test::More tests => 3;
 
-use Dancer::Template::Declare;
+use Dancer::Template::TemplateDeclare;
 
 my $engine;
-eval { $engine = Dancer::Template::Declare->new( 
+eval { $engine = Dancer::Template::TemplateDeclare->new( 
     dispatch_to => [ 'TD' ],
 ) };
-is $@, '', "Dancer::Template::Declare engine created";
+is $@, '', "Dancer::Template::TemplateDeclare engine created";
 
 $engine->init(
     dispatch_to => [ 'TD' ],

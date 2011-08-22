@@ -1,7 +1,7 @@
 package Foo;
 use Dancer ':syntax';
 
-use Dancer::Template::Declare;
+use Dancer::Template::TemplateDeclare;
 
 use FindBin;
 
@@ -12,12 +12,12 @@ set appname => 'Foo';
 set views => $FindBin::Bin.'/apps/Foo/views';
 
 set engines => {
-    declare => { 
+    TemplateDeclare => { 
         dispatch_to => [ 'TD' ],
     },
 };
 
-set template => 'declare';
+set template => 'TemplateDeclare';
 
 get '/' => sub {
     template 'simple';

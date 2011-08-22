@@ -4,8 +4,8 @@ no warnings;
 use Test::More tests => 1;
 
 BEGIN {
-    use_ok( 'Dancer::Template::Declare' ) || print "Bail out!
+    use_ok( 'Dancer::Template::TemplateDeclare' ) || print "Bail out!
 ";
 }
 
-diag( "Testing Dancer::Template::Declare $Dancer::Template::Declare::VERSION, Perl $], $^X" );
+diag( "Testing Dancer::Template::TemplateDeclare $Dancer::Template::TemplateDeclare::VERSION, Perl $], $^X" );
