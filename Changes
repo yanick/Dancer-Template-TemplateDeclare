@@ -1,4 +1,7 @@
 Revision history for Dancer-Template-TemplateDeclare
 
 {{$NEXT}}
+
+0.1.0     2011-08-21
+ [ENHANCEMENTS]
  - Initial release
