@@ -1,5 +1,9 @@
 Revision history for Dancer-Template-TemplateDeclare
 
+0.1.1 2012-01-15
+ [BUG FIXES]
+ - work around templates having to be files
+
 0.1.0 2011-08-21
  [ENHANCEMENTS]
  - Initial release

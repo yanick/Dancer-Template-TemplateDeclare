@@ -1,9 +1,9 @@
 package Dancer::Template::TemplateDeclare;
 BEGIN {
-  $Dancer::Template::TemplateDeclare::AUTHORITY = 'cpan:yanick';
+  $Dancer::Template::TemplateDeclare::AUTHORITY = 'cpan:YANICK';
 }
-BEGIN {
-  $Dancer::Template::TemplateDeclare::VERSION = '0.1.0';
+{
+  $Dancer::Template::TemplateDeclare::VERSION = '0.1.1';
 }
 # ABSTRACT: Template::Declare wrapper for Dancer
 
@@ -33,8 +33,20 @@ sub init {
 
 sub default_tmpl_ext { return 'DUMMY'; } # because Dancer requires an ext
 
+sub apply_renderer {
+    my ( $self, $view, $tokens ) = @_;
+
+    $tokens->{template} = $view;
+
+    return $self->SUPER::apply_renderer( '.', $tokens );
+}
+
+sub view { '.' }
+
 sub render {
     my ($self, $template, $tokens) = @_;
+
+    $template = $tokens->{template} || $template;
 
     $template =~ s/\Q$root_dir//;  # cut the leading path
     $template =~ s/\.DUMMY$//;     # and the dummy extension
@@ -64,7 +76,7 @@ Dancer::Template::TemplateDeclare - Template::Declare wrapper for Dancer
 
 =head1 VERSION
 
-version 0.1.0
+version 0.1.1
 
 =head1 SYNOPSIS
 
@@ -137,7 +149,7 @@ Yanick Champoux
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Yanick Champoux.
+This software is copyright (c) 2012 by Yanick Champoux.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -15,7 +15,6 @@ t/apps/Foo/Makefile.PL
 t/apps/Foo/bin/app.pl
 t/apps/Foo/lib/Foo.pm
 t/apps/Foo/lib/TD.pm
-t/apps/Foo/logs/development.log
 t/apps/Foo/public/404.html
 t/apps/Foo/public/500.html
 t/apps/Foo/public/css/error.css

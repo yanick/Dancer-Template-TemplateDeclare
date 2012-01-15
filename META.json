@@ -4,7 +4,7 @@
       "Yanick Champoux"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.102345, CPAN::Meta::Converter version 2.101590",
+   "generated_by" : "Dist::Zilla version 4.300002, CPAN::Meta::Converter version 2.112150",
    "license" : [
       "perl_5"
    ],
@@ -26,28 +26,32 @@
       },
       "runtime" : {
          "requires" : {
+            "Dancer" : "1.3050",
             "Dancer::Config" : 0,
             "Dancer::Template::Abstract" : 0,
             "FindBin" : 0,
-            "Template::Declare" : 0
+            "Template::Declare" : 0,
+            "base" : 0,
+            "strict" : 0
          }
       },
       "test" : {
          "requires" : {
-            "Dancer" : 0,
+            "Dancer" : "1.3050",
             "Dancer::Test" : 0,
             "ExtUtils::MakeMaker" : 0,
             "Plack::Handler::FCGI" : 0,
             "Plack::Runner" : 0,
             "Template::Declare::Tags" : 0,
-            "Test::More" : 0
+            "Test::More" : 0,
+            "warnings" : 0
          }
       }
    },
    "provides" : {
       "Dancer::Template::TemplateDeclare" : {
          "file" : "lib/Dancer/Template/TemplateDeclare.pm",
-         "version" : "v0.1.0"
+         "version" : "v0.1.1"
       }
    },
    "release_status" : "stable",
@@ -56,9 +60,14 @@
          "mailto" : "bug-dancer-template-templatedeclare at rt.cpan.org",
          "web" : "http://rt.cpan.org/Public/Dist/Display.html?Name=Dancer-Template-TemplateDeclare"
       },
-      "homepage" : "http://search.cpan.org/dist/Dancer-Template-TemplateDeclare/"
+      "homepage" : "http://search.cpan.org/dist/Dancer-Template-TemplateDeclare/",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/yanick/Dancer-Template-TemplateDeclare.git",
+         "web" : "https://github.com/yanick/Dancer-Template-TemplateDeclare"
+      }
    },
-   "version" : "0.1.0",
-   "x_authority" : "cpan:yanick"
+   "version" : "0.1.1",
+   "x_authority" : "cpan:YANICK"
 }
 
