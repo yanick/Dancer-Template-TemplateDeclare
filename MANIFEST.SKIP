@@ -2,3 +2,4 @@ dist.ini
 foo
 ^Dancer-Template-TemplateDeclare-.*
 MANIFEST\.SKIP
+\.log$

@@ -27,8 +27,20 @@ sub init {
 
 sub default_tmpl_ext { return 'DUMMY'; } # because Dancer requires an ext
 
+sub apply_renderer {
+    my ( $self, $view, $tokens ) = @_;
+
+    $tokens->{template} = $view;
+
+    return $self->SUPER::apply_renderer( '.', $tokens );
+}
+
+sub view { '.' }
+
 sub render {
     my ($self, $template, $tokens) = @_;
+
+    $template = $tokens->{template} || $template;
 
     $template =~ s/\Q$root_dir//;  # cut the leading path
     $template =~ s/\.DUMMY$//;     # and the dummy extension
