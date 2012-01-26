@@ -1,6 +1,8 @@
 Revision history for Dancer-Template-TemplateDeclare
 
 {{$NEXT}}
+
+0.2.0     2012-01-25
  [ENHANCEMENTS]
  - clean the code a little bit, explain why the token 'template'
     is necessary.
