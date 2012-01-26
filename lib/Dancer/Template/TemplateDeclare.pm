@@ -3,7 +3,7 @@ BEGIN {
   $Dancer::Template::TemplateDeclare::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $Dancer::Template::TemplateDeclare::VERSION = '0.1.1';
+  $Dancer::Template::TemplateDeclare::VERSION = '0.2.0';
 }
 # ABSTRACT: Template::Declare wrapper for Dancer
 
@@ -13,8 +13,6 @@ use Template::Declare;
 use Dancer::Config 'setting';
 
 use base 'Dancer::Template::Abstract';
-
-my $root_dir;
 
 sub init { 
     my $self = shift;
@@ -27,8 +25,6 @@ sub init {
     eval "use $_; 1;" or die $@ for @{ $config->{dispatch_to} };
 
     Template::Declare->init(%$config);
-
-    $root_dir = setting('views') || $FindBin::Bin . '/views';
 }
 
 sub default_tmpl_ext { return 'DUMMY'; } # because Dancer requires an ext
@@ -38,19 +34,16 @@ sub apply_renderer {
 
     $tokens->{template} = $view;
 
-    return $self->SUPER::apply_renderer( '.', $tokens );
+    return $self->SUPER::apply_renderer( $view, $tokens );
 }
 
-sub view { '.' }
+sub view { $FindBin::Bin }
 
 sub render {
     my ($self, $template, $tokens) = @_;
 
     $template = $tokens->{template} || $template;
 
-    $template =~ s/\Q$root_dir//;  # cut the leading path
-    $template =~ s/\.DUMMY$//;     # and the dummy extension
-    
     return Template::Declare->show( $template => $tokens );
 }
 
@@ -76,7 +69,7 @@ Dancer::Template::TemplateDeclare - Template::Declare wrapper for Dancer
 
 =head1 VERSION
 
-version 0.1.1
+version 0.2.0
 
 =head1 SYNOPSIS
 
@@ -120,6 +113,12 @@ the configuration file, like so:
 
 All the dispatch classes are automatically 
 loaded behind the scene.
+
+Note that this engine will add I<template> (which holds
+the template name) to the tokens. This is a little piece
+of chicanery required to get around the default behavior
+of L<Dancer::Template::Abstract>, which expects templates
+to be file-based.
 
 =head1 USING LAYOUTS
 

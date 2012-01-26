@@ -1,5 +1,10 @@
 Revision history for Dancer-Template-TemplateDeclare
 
+0.2.0 2012-01-25
+ [ENHANCEMENTS]
+ - clean the code a little bit, explain why the token 'template' is
+   necessary.
+
 0.1.1 2012-01-15
  [BUG FIXES]
  - work around templates having to be files

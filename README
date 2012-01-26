@@ -2,7 +2,7 @@ NAME
     Dancer::Template::TemplateDeclare - Template::Declare wrapper for Dancer
 
 VERSION
-    version 0.1.1
+    version 0.2.0
 
 SYNOPSIS
       # in 'config.yml'
@@ -42,6 +42,11 @@ Template::Declare  CONFIGURATION
                     - Some::Other::Template
 
     All the dispatch classes are automatically loaded behind the scene.
+
+    Note that this engine will add *template* (which holds the template
+    name) to the tokens. This is a little piece of chicanery required to get
+    around the default behavior of Dancer::Template::Abstract, which expects
+    templates to be file-based.
 
 USING LAYOUTS
     If the layout is set to *$name*, the template "/layout/$name" will be
