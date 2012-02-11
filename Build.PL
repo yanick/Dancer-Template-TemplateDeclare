@@ -25,7 +25,7 @@ my %module_build_args = (
     "Yanick Champoux"
   ],
   "dist_name" => "Dancer-Template-TemplateDeclare",
-  "dist_version" => "0.2.0",
+  "dist_version" => "0.3.0",
   "license" => "perl",
   "module_name" => "Dancer::Template::TemplateDeclare",
   "recommends" => {},

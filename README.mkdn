@@ -4,7 +4,7 @@ Dancer::Template::TemplateDeclare - Template::Declare wrapper for Dancer
 
 # VERSION
 
-version 0.2.0
+version 0.3.0
 
 # SYNOPSIS
 
@@ -49,12 +49,6 @@ the configuration file, like so:
 
 All the dispatch classes are automatically 
 loaded behind the scene.
-
-Note that this engine will add _template_ (which holds
-the template name) to the tokens. This is a little piece
-of chicanery required to get around the default behavior
-of [Dancer::Template::Abstract](http://search.cpan.org/perldoc?Dancer::Template::Abstract), which expects templates
-to be file-based.
 
 # USING LAYOUTS
 

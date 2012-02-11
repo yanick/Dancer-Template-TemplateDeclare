@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 3;                      # last test to print
+use Test::More tests => 3;
 
 use lib 't/apps/Foo/lib';
 

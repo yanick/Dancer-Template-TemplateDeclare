@@ -3,7 +3,7 @@ BEGIN {
   $Dancer::Template::TemplateDeclare::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $Dancer::Template::TemplateDeclare::VERSION = '0.2.0';
+  $Dancer::Template::TemplateDeclare::VERSION = '0.3.0';
 }
 # ABSTRACT: Template::Declare wrapper for Dancer
 
@@ -29,20 +29,12 @@ sub init {
 
 sub default_tmpl_ext { return 'DUMMY'; } # because Dancer requires an ext
 
-sub apply_renderer {
-    my ( $self, $view, $tokens ) = @_;
+sub view_exists { return 1; }
 
-    $tokens->{template} = $view;
-
-    return $self->SUPER::apply_renderer( $view, $tokens );
-}
-
-sub view { $FindBin::Bin }
+sub view { return $_[1] }
 
 sub render {
     my ($self, $template, $tokens) = @_;
-
-    $template = $tokens->{template} || $template;
 
     return Template::Declare->show( $template => $tokens );
 }
@@ -69,7 +61,7 @@ Dancer::Template::TemplateDeclare - Template::Declare wrapper for Dancer
 
 =head1 VERSION
 
-version 0.2.0
+version 0.3.0
 
 =head1 SYNOPSIS
 
@@ -113,12 +105,6 @@ the configuration file, like so:
 
 All the dispatch classes are automatically 
 loaded behind the scene.
-
-Note that this engine will add I<template> (which holds
-the template name) to the tokens. This is a little piece
-of chicanery required to get around the default behavior
-of L<Dancer::Template::Abstract>, which expects templates
-to be file-based.
 
 =head1 USING LAYOUTS
 
