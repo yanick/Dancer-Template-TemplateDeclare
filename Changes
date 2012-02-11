@@ -6,6 +6,7 @@ Revision history for Dancer-Template-TemplateDeclare
  [BUG FIXES]
 
  [ENHANCEMENTS]
+ - the token 'template' is no longer necessary. Yay!
 
 0.2.0 2012-01-25
  [ENHANCEMENTS]

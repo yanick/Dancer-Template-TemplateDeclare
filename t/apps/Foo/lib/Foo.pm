@@ -1,4 +1,5 @@
 package Foo;
+
 use Dancer ':syntax';
 
 use Dancer::Template::TemplateDeclare;
