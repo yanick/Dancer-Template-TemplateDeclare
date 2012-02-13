@@ -1,12 +1,15 @@
 Revision history for Dancer-Template-TemplateDeclare
 
 {{$NEXT}}
-
-0.3.0     2012-02-11
  [API CHANGES]
 
  [BUG FIXES]
+ - requires Dancer v0.3092, which fixes the possible
+    infinite loop in _censor.
 
+ [ENHANCEMENTS]
+
+0.3.0 2012-02-11
  [ENHANCEMENTS]
  - the token 'template' is no longer necessary. Yay!
 
