@@ -25,13 +25,13 @@ my %module_build_args = (
     "Yanick Champoux"
   ],
   "dist_name" => "Dancer-Template-TemplateDeclare",
-  "dist_version" => "0.3.0",
+  "dist_version" => "0.3.1",
   "license" => "perl",
   "module_name" => "Dancer::Template::TemplateDeclare",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
-    "Dancer" => "1.3050",
+    "Dancer" => "1.3092",
     "Dancer::Config" => 0,
     "Dancer::Template::Abstract" => 0,
     "FindBin" => 0,

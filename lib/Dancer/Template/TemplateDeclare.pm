@@ -3,7 +3,7 @@ BEGIN {
   $Dancer::Template::TemplateDeclare::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $Dancer::Template::TemplateDeclare::VERSION = '0.3.0';
+  $Dancer::Template::TemplateDeclare::VERSION = '0.3.1';
 }
 # ABSTRACT: Template::Declare wrapper for Dancer
 
@@ -61,7 +61,7 @@ Dancer::Template::TemplateDeclare - Template::Declare wrapper for Dancer
 
 =head1 VERSION
 
-version 0.3.0
+version 0.3.1
 
 =head1 SYNOPSIS
 

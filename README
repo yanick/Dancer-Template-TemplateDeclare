@@ -2,7 +2,7 @@ NAME
     Dancer::Template::TemplateDeclare - Template::Declare wrapper for Dancer
 
 VERSION
-    version 0.3.0
+    version 0.3.1
 
 SYNOPSIS
       # in 'config.yml'
