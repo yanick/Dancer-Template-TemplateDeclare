@@ -6,15 +6,10 @@ Revision history for Dancer-Template-TemplateDeclare
  - Fix the possible infinite loop in _censor (patch by 
     Clinton Gormley)
 
-0.3.1     2012-02-12
- [API CHANGES]
-
+0.3.1 2012-02-12
  [BUG FIXES]
- - requires Dancer v0.3092, which fixes the possible
-    infinite loop in _censor, plus the patch by 
-    Clinton Gormley which definitively fix it.
-
- [ENHANCEMENTS]
+ - requires Dancer v0.3092, which fixes the possible infinite loop in
+   _censor.
 
 0.3.0 2012-02-11
  [ENHANCEMENTS]
