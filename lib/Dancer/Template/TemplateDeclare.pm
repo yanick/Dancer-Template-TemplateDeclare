@@ -3,7 +3,7 @@ BEGIN {
   $Dancer::Template::TemplateDeclare::AUTHORITY = 'cpan:YANICK';
 }
 {
-  $Dancer::Template::TemplateDeclare::VERSION = '0.3.1';
+  $Dancer::Template::TemplateDeclare::VERSION = '0.3.2';
 }
 # ABSTRACT: Template::Declare wrapper for Dancer
 
@@ -16,15 +16,15 @@ use base 'Dancer::Template::Abstract';
 
 sub init { 
     my $self = shift;
-    my $config = $self->config || {};
+    my %config = %{$self->config || {}};
 
     my %args = @_;
 
-    @$config{keys %args} = values %args;
+    @config{keys %args} = values %args;
 
-    eval "use $_; 1;" or die $@ for @{ $config->{dispatch_to} };
+    eval "use $_; 1;" or die $@ for @{ $config{dispatch_to} };
 
-    Template::Declare->init(%$config);
+    Template::Declare->init(%config);
 }
 
 sub default_tmpl_ext { return 'DUMMY'; } # because Dancer requires an ext
@@ -61,7 +61,7 @@ Dancer::Template::TemplateDeclare - Template::Declare wrapper for Dancer
 
 =head1 VERSION
 
-version 0.3.1
+version 0.3.2
 
 =head1 SYNOPSIS
 

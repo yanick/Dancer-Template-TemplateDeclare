@@ -10,6 +10,8 @@ my %module_build_args = (
     "Dancer" => "1.3050",
     "Dancer::Test" => 0,
     "ExtUtils::MakeMaker" => 0,
+    "File::Find" => 0,
+    "File::Temp" => 0,
     "Module::Build" => "0.3601",
     "Plack::Handler::FCGI" => 0,
     "Plack::Runner" => 0,
@@ -25,7 +27,7 @@ my %module_build_args = (
     "Yanick Champoux"
   ],
   "dist_name" => "Dancer-Template-TemplateDeclare",
-  "dist_version" => "0.3.1",
+  "dist_version" => "0.3.2",
   "license" => "perl",
   "module_name" => "Dancer::Template::TemplateDeclare",
   "recommends" => {},

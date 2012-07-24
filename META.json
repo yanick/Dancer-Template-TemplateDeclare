@@ -4,7 +4,7 @@
       "Yanick Champoux"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300002, CPAN::Meta::Converter version 2.112150",
+   "generated_by" : "Dist::Zilla version 4.300010, CPAN::Meta::Converter version 2.120630",
    "license" : [
       "perl_5"
    ],
@@ -27,31 +27,33 @@
       "runtime" : {
          "requires" : {
             "Dancer" : "1.3092",
-            "Dancer::Config" : 0,
-            "Dancer::Template::Abstract" : 0,
-            "FindBin" : 0,
-            "Template::Declare" : 0,
-            "base" : 0,
-            "strict" : 0
+            "Dancer::Config" : "0",
+            "Dancer::Template::Abstract" : "0",
+            "FindBin" : "0",
+            "Template::Declare" : "0",
+            "base" : "0",
+            "strict" : "0"
          }
       },
       "test" : {
          "requires" : {
             "Dancer" : "1.3050",
-            "Dancer::Test" : 0,
-            "ExtUtils::MakeMaker" : 0,
-            "Plack::Handler::FCGI" : 0,
-            "Plack::Runner" : 0,
-            "Template::Declare::Tags" : 0,
-            "Test::More" : 0,
-            "warnings" : 0
+            "Dancer::Test" : "0",
+            "ExtUtils::MakeMaker" : "0",
+            "File::Find" : "0",
+            "File::Temp" : "0",
+            "Plack::Handler::FCGI" : "0",
+            "Plack::Runner" : "0",
+            "Template::Declare::Tags" : "0",
+            "Test::More" : "0",
+            "warnings" : "0"
          }
       }
    },
    "provides" : {
       "Dancer::Template::TemplateDeclare" : {
          "file" : "lib/Dancer/Template/TemplateDeclare.pm",
-         "version" : "v0.3.1"
+         "version" : "v0.3.2"
       }
    },
    "release_status" : "stable",
@@ -67,7 +69,10 @@
          "web" : "https://github.com/yanick/Dancer-Template-TemplateDeclare"
       }
    },
-   "version" : "0.3.1",
+   "version" : "0.3.2",
+   "x_author_pledge" : {
+      "version" : 1
+   },
    "x_authority" : "cpan:YANICK"
 }
 

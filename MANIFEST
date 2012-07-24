@@ -1,3 +1,4 @@
+AUTHOR_PLEDGE
 Build.PL
 Changes
 INSTALL
@@ -9,6 +10,7 @@ README
 README.mkdn
 SIGNATURE
 lib/Dancer/Template/TemplateDeclare.pm
+t/00-compile.t
 t/00-load.t
 t/01-basic.t
 t/apps/Foo/Makefile.PL
@@ -27,3 +29,4 @@ t/apps/Foo/public/images/perldancer.jpg
 t/apps/Foo/public/javascripts/jquery.js
 t/apps/Foo/views/index.m
 t/basic_app.t
+xt/release/unused-vars.t
