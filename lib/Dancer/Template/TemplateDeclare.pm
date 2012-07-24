@@ -10,15 +10,15 @@ use base 'Dancer::Template::Abstract';
 
 sub init { 
     my $self = shift;
-    my $config = $self->config || {};
+    my %config = %{$self->config || {}};
 
     my %args = @_;
 
-    @$config{keys %args} = values %args;
+    @config{keys %args} = values %args;
 
-    eval "use $_; 1;" or die $@ for @{ $config->{dispatch_to} };
+    eval "use $_; 1;" or die $@ for @{ $config{dispatch_to} };
 
-    Template::Declare->init(%$config);
+    Template::Declare->init(%config);
 }
 
 sub default_tmpl_ext { return 'DUMMY'; } # because Dancer requires an ext
