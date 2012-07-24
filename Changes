@@ -1,12 +1,21 @@
 Revision history for Dancer-Template-TemplateDeclare
 
 {{$NEXT}}
-
-0.3.2     2012-07-24
+ [API CHANGES]
 
  [BUG FIXES]
- - Fix the possible infinite loop in _censor (patch by 
-    Clinton Gormley)
+
+ [DOCUMENTATION]
+
+ [ENHANCEMENTS]
+
+ [NEW FEATURES]
+
+ [STATISTICS]
+
+0.3.2 2012-07-24
+ [BUG FIXES]
+ - Fix the possible infinite loop in _censor (patch by	Clinton Gormley)
 
 0.3.1 2012-02-12
  [BUG FIXES]
